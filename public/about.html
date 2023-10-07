@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRADC Club - UWI Five Islands</title>
+    <script>
+        document.write('<link rel="stylesheet" type="text/css" href="styles.css">');
+    </script>
+</head>
+<body>
+    <header>
+        <div id="headerContainer"></div>	
+    </header>
+	
+    <nav>
+		<nav id="navContainer"></nav>    
+    </nav>
+
+	<section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to UWI TRADC! 🚀</p>
+        <p>UWI TRADC (Technology Research And Development Club), pronounced 'Track', is a vibrant community of tech enthusiasts and innovators at the UWI Five Islands Campus. We're dedicated to fostering innovation, collaboration, and exploration in the world of technology.</p>
+
+        <h3>Mission</h3>
+        <p>Our mission is to promote research and development in the field of technology, nurture the minds of the University of the West Indies in STEAM (Science, Technology, Engineering, Arts, and Mathematics), and create a supportive platform for aspiring tech leaders.</p>
+
+        <h3>Membership</h3>
+        <p>We are proud to have a diverse community of 21 members, including 8 dedicated executive members, who are passionate about technology and innovation.</p>
+
+        <h3>Get Involved</h3>
+        <ul>
+            <li>Explore our <a href="#contribution-guidelines">Contribution Guidelines</a> to learn how you can participate in our projects and events.</li>
+            <li>Connect with fellow tech enthusiasts in our <a href="#discussions">Discussions</a> to share ideas, seek help, and collaborate.</li>
+            <li>Stay updated with our activities by watching our <a href="https://github.com/UWI-TRADC" target="_blank">GitHub repository</a> and following us on <a href="https://twitter.com/UWI_TRADC" target="_blank">Twitter</a> and <a href="https://www.instagram.com/uwi_tradc/" target="_blank">Instagram</a>.</li>
+            <li>Announcement Channel: Stay updated with our latest news and events by joining us on <a href="https://t.me/uwi_tradc" target="_blank">Telegram</a>.</li>
+        </ul>
+
+        <h3>What's Happening</h3>
+        <ul>
+            <li>We've provided internships in blockchain development to 5 of our talented members.</li>
+            <li>Stay tuned for our upcoming hackathons in 2 different countries! A great opportunity to showcase your skills and learn from fellow techies.</li>
+        </ul>
+
+        <h3>Resources</h3>
+        <ul>
+            <li>Discover more about our projects, events, and initiatives in our <a href="#documentation">Documentation</a>.</li>
+            <li>Have a question? Check out our <a href="#faqs">FAQs</a> for answers to common queries.</li>
+            <li>New to the club? Check out our <a href="#github-guide">GitHub Student Benefits Guide</a> just for you.</li>
+        </ul>
+
+        <h3>Fun Facts</h3>
+        <p>Did you know? Our team's breakfast choices range from pancakes to avocado toast! 🥞🥑</p>
+
+        <p>Join us in our journey to explore the frontiers of technology, spark creativity, and make a positive impact in the world. 🌍✨</p>
+    </section>
+
+    <footer>
+         <div id="footerContainer"></div>
+    </footer>
+	
+	<script>
+        // Function to include HTML content asynchronously
+        function includeHTML(filename, containerId) {
+            fetch(filename)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(containerId).innerHTML = html;
+                })
+                .catch(error => console.error('Error fetching ' + filename, error));
+        }
+
+        // Include navigation
+        includeHTML('nav.html', 'navContainer');
+
+        // Include header
+        includeHTML('header.html', 'headerContainer');
+
+        // Include footer
+        includeHTML('footer.html', 'footerContainer');
+    </script>
+</body>
+</html>

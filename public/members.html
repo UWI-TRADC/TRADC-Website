@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRADC Club - UWI Five Islands</title>
+    <script>
+        document.write('<link rel="stylesheet" type="text/css" href="styles.css">');
+    </script>
+</head>
+<body>
+    <header>
+        <div id="headerContainer"></div>	
+    </header>
+	
+    <nav>
+		<nav id="navContainer"></nav>    
+    </nav>
+
+    <section class="members">
+        <h2>Members</h2>
+        <ul id="members-list">
+            <li>Member 1 - Role 1</li>
+            <li>Member 2 - Role 2</li>
+        </ul>
+        <button onclick="showPrompt()">Add Member</button>
+    </section>
+
+    <footer>
+         <div id="footerContainer"></div>
+    </footer>
+	
+	<script>
+        // Function to include HTML content asynchronously
+        function includeHTML(filename, containerId) {
+            fetch(filename)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(containerId).innerHTML = html;
+                })
+                .catch(error => console.error('Error fetching ' + filename, error));
+        }
+
+        // Include navigation
+        includeHTML('nav.html', 'navContainer');
+
+        // Include header
+        includeHTML('header.html', 'headerContainer');
+
+        // Include footer
+        includeHTML('footer.html', 'footerContainer');
+    </script>
+</body>
+</html>

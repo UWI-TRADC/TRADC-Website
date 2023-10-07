@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRADC Club - UWI Five Islands</title>
+    <script>
+        document.write('<link rel="stylesheet" type="text/css" href="styles.css">');
+    </script>
+</head>
+<body>
+    <header>
+        <div id="headerContainer"></div>	
+    </header>
+	
+    <nav>
+		<nav id="navContainer"></nav>    
+    </nav>
+
+	<section>
+    <h1>ThePeoplesPlace</h1>
+
+    <p>This blockchain-based marketplace enables users to buy/sell tangible items with dispute resolution. Transactions are transparently recorded on the blockchain, and a knowledge repository offers market insights, ensuring fair, secure, and accountable operations.</p>
+
+    <img class="project-image" src="https://storage.googleapis.com/ethglobal-api-production/projects%2Fgvps5%2Fimages%2Fsc2.png" alt="ThePeoplesPlace Image">
+
+    <div class="project-link">
+        <p>Learn more: <a href="https://ethglobal.com/showcase/thepeoplesplace-gvps5" target="_blank">ThePeoplesPlace Project</a></p>
+    </div>
+	</section>
+
+    <footer>
+         <div id="footerContainer"></div>
+    </footer>
+	
+	<script>
+        // Function to include HTML content asynchronously
+        function includeHTML(filename, containerId) {
+            fetch(filename)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(containerId).innerHTML = html;
+                })
+                .catch(error => console.error('Error fetching ' + filename, error));
+        }
+
+        // Include navigation
+        includeHTML('nav.html', 'navContainer');
+
+        // Include header
+        includeHTML('header.html', 'headerContainer');
+
+        // Include footer
+        includeHTML('footer.html', 'footerContainer');
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRADC Club - UWI Five Islands</title>
+    <script>
+        document.write('<link rel="stylesheet" type="text/css" href="styles.css">');
+    </script>
+</head>
+<body>
+    <header>
+        <div id="headerContainer"></div>	
+    </header>
+	
+    <nav>
+		<nav id="navContainer"></nav>    
+    </nav>
+
+	<section class="announcement">
+		<h2>Upcoming Event Announcement</h2>
+		<p>🚀 <strong>ETH Hacks Hackathon Announcement</strong> 🚀</p>
+		<p>Hello UWIFIC Community!</p>
+		<p>TRADC is excited to announce the <strong>ETH Hacks Hackathon</strong> from October 8th - 14th! This is a
+		fantastic opportunity to dive deep into Ethereum-based technologies and prepare for ETH
+		Global competitions year long.</p>
+		<p>🔗 <strong>Technologies:</strong> Ethereum, IPFS, The Graph, Chainlink, Polygon, StarkWare, Zapper,
+		Zerion, 1inch, Uniswap, and so much more...</p>
+		<p>🛠 <strong>Hackathon Ideas:</strong> From decentralized blogging platforms to P2P marketplaces, we've got a
+		list of exciting projects for you to recreate and innovate upon.</p>
+		<p>🤝 <strong>Support:</strong> While this is a self-driven hackathon, we'll be here every step of the way with daily
+		check-ins, resource sharing, and peer review sessions.</p>
+		<p>Let's build, learn, and innovate together! See you on October 8th!</p>
+	</section>
+
+    <footer>
+         <div id="footerContainer"></div>
+    </footer>
+	
+	<script>
+        // Function to include HTML content asynchronously
+        function includeHTML(filename, containerId) {
+            fetch(filename)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(containerId).innerHTML = html;
+                })
+                .catch(error => console.error('Error fetching ' + filename, error));
+        }
+
+        // Include navigation
+        includeHTML('nav.html', 'navContainer');
+
+        // Include header
+        includeHTML('header.html', 'headerContainer');
+
+        // Include footer
+        includeHTML('footer.html', 'footerContainer');
+    </script>
+</body>
+</html>

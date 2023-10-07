@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRADC Club - UWI Five Islands</title>
+    <script>
+        document.write('<link rel="stylesheet" type="text/css" href="styles.css">');
+    </script>
+</head>
+<body>
+    <header>
+        <div id="headerContainer"></div>	
+    </header>
+	
+    <nav>
+		<nav id="navContainer"></nav>    
+    </nav>
+	
+	<div class="join-section">
+		<h1>Join TRADC Club</h1>
+	</div>
+
+	<form action="/submit" method="post">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" required>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" required>
+
+		<label for="year">Year of Study:</label>
+		<select id="year" name="year" required>
+			<option value="1">First Year</option>
+			<option value="2">Second Year</option>
+			<option value="3">Third Year</option>
+			<option value="4">Fourth Year</option>
+			<option value="5+">Fifth Year or Above</option>
+		</select>
+
+		<label for="major">Major:</label>
+		<input type="text" id="major" name="major" required>
+
+		<label for="department">Department:</label>
+		<select id="department" name="department" required>
+			<option value="SOSCAI">SOSCAI</option>
+			<option value="SOBM">SOBM</option>
+			<option value="SOHM">SOHM</option>
+		</select>
+
+		<button type="submit">Join TRADC Club</button>
+	</form>
+	<br>
+
+    <footer>
+         <div id="footerContainer"></div>
+    </footer>
+	
+	<script>
+        // Function to include HTML content asynchronously
+        function includeHTML(filename, containerId) {
+            fetch(filename)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(containerId).innerHTML = html;
+                })
+                .catch(error => console.error('Error fetching ' + filename, error));
+        }
+
+        // Include navigation
+        includeHTML('nav.html', 'navContainer');
+
+        // Include header
+        includeHTML('header.html', 'headerContainer');
+
+        // Include footer
+        includeHTML('footer.html', 'footerContainer');
+    </script>
+</body>
+</html>
